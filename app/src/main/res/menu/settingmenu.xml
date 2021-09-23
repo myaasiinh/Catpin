@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <item android:id="@+id/searchItems"
+        android:title="search"
+        app:showAsAction="always"
+        android:icon="@drawable/ic_baseline_search_24"
+        app:actionViewClass="androidx.appcompat.widget.SearchView" />
+
+    <item
+        android:id="@+id/tambahkanmemo"
+        android:title="Tambahkan Memo" />
+
+    <item
+        android:id="@+id/rubahmodememo"
+        android:title="Rubah Mode memo" />
+
+    <item
+        android:id="@+id/tentangapp"
+        android:title="Tentang app" />
+
+    <item
+        android:id="@+id/keluarapp"
+        android:title="Keluar app" />
+
+</menu>
