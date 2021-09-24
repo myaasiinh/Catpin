@@ -22,6 +22,7 @@
         <activity android:name=".ui.main.view.MainActivity" />
         <activity android:name=".ui.main.view.TambahkanmemoActivity" />
         <activity android:name=".ui.main.view.TentangAplikasiActivity" />
+        <activity android:name=".ui.main.view.LainnyaActivity" />
 
     </application>
 

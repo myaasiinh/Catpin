@@ -49,10 +49,7 @@
             android:focusable="true"
             android:background="@null"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:autofillHints=""
-            android:inputType=""
-            tools:ignore="LabelFor" />
+            android:layout_height="match_parent" />
 
     </LinearLayout>
 </LinearLayout>

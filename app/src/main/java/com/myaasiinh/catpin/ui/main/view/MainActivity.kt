@@ -21,8 +21,9 @@ import com.myaasiinh.catpin.data.model.Catpin
 import com.myaasiinh.catpin.ui.main.adapter.CatpinAdapter
 import com.myaasiinh.catpin.ui.main.viewmodel.CatpinViewModel
 import com.myaasiinh.catpin.utils.listener.Listener
+import kotlin.system.exitProcess
 
-class MainActivity : AppCompatActivity(R.layout.activity_main), Listener {
+class MainActivity : AppCompatActivity(), Listener {
 
     private lateinit var recyclerView: RecyclerView
     private lateinit var catpinviewModel: CatpinViewModel
@@ -33,6 +34,7 @@ class MainActivity : AppCompatActivity(R.layout.activity_main), Listener {
     
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
 
         toolbar = findViewById(R.id.topAppBar)
         toolbar.setNavigationOnClickListener {
@@ -111,8 +113,8 @@ class MainActivity : AppCompatActivity(R.layout.activity_main), Listener {
 
             }
             R.id.keluarapp -> {
-                // Handle search icon press
-
+                //handle press exit
+                exitProcess(0)
             }
 
         }

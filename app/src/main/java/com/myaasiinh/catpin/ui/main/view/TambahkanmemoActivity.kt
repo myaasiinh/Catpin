@@ -1,5 +1,6 @@
 package com.myaasiinh.catpin.ui.main.view
 
+
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
@@ -22,9 +23,9 @@ class TambahkanmemoActivity:AppCompatActivity(R.layout.activity_detail) {
     private lateinit var  getNote: Catpin
     private lateinit var catpinViewModel: CatpinViewModel
     private lateinit var upCharacter : TextView
-    private lateinit var upDatedate : TextView
-    private lateinit var upDatedata : FloatingActionButton
-    private lateinit var upDatenote : EditText
+    private lateinit var updateDate : TextView
+    private lateinit var updateData : FloatingActionButton
+    private lateinit var updateNote : EditText
 
     @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -34,29 +35,29 @@ class TambahkanmemoActivity:AppCompatActivity(R.layout.activity_detail) {
         getDate()
         catpinViewModel= CatpinViewModel()
         upCharacter.text="| 0 characters"
-        upDatenote.addTextChangedListener(textWatcher)
+        updateNote.addTextChangedListener(textWatcher)
 
         val bundle:Bundle?=intent.extras
         if(bundle != null){
             getNote = bundle.getSerializable("catpin")!! as Catpin
         }
         loadNote(getNote)
-        upDatedata.setOnClickListener {
+        updateData.setOnClickListener {
             updateNote()
         }
     }
 
     private fun loadNote(catpin: Catpin)
     {
-        upDatenote.setText(catpin.data)
+        updateNote.setText(catpin.data)
         upCharacter.text="${catpin.characters}"
     }
 
     private fun updateNote()
     {
-        getNote.data=upDatenote.text.toString()
-        getNote.date=upDatenote.text.toString()
-        getNote.characters= upDatenote.text.toString().length.toLong()
+        getNote.data=updateNote.text.toString()
+        getNote.date=updateDate.text.toString()
+        getNote.characters= updateNote.text.toString().length.toLong()
         catpinViewModel.update(applicationContext,getNote)
         val intent= Intent(this,MainActivity::class.java)
         startActivity(intent)
@@ -82,7 +83,7 @@ class TambahkanmemoActivity:AppCompatActivity(R.layout.activity_detail) {
 
     private fun getDate() {
         date= Calendar.getInstance().time
-        upDatedate.text=date.toString()
+        updateDate.text =date.toString()
     }
 
 }
