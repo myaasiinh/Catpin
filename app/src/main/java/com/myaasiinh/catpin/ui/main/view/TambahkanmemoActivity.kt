@@ -5,54 +5,59 @@ import android.content.Intent
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
+import android.widget.EditText
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import com.codingwithjks.notepad.ui.Model.Catpin
-import com.myaasiinh.catpin.databinding.ActivityDetailBinding
+import com.google.android.material.floatingactionbutton.FloatingActionButton
+import com.myaasiinh.catpin.R
+import com.myaasiinh.catpin.data.model.Catpin
 import com.myaasiinh.catpin.ui.main.viewmodel.CatpinViewModel
 import java.util.*
 
 
-class TambahkanmemoActivity:AppCompatActivity() {
+class TambahkanmemoActivity:AppCompatActivity(R.layout.activity_detail) {
 
     @SuppressLint("RestrictedApi")
     private lateinit var date: Date
     private lateinit var  getNote: Catpin
-    private lateinit var noteViewModel: CatpinViewModel
-    private lateinit var binding : ActivityDetailBinding
+    private lateinit var catpinViewModel: CatpinViewModel
+    private lateinit var upCharacter : TextView
+    private lateinit var upDatedate : TextView
+    private lateinit var upDatedata : FloatingActionButton
+    private lateinit var upDatenote : EditText
 
     @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityDetailBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+
 
         getDate()
-        noteViewModel= CatpinViewModel()
-        binding.updateCharacter.text="| 0 characters"
-        binding.updateNote.addTextChangedListener(textWatcher)
+        catpinViewModel= CatpinViewModel()
+        upCharacter.text="| 0 characters"
+        upDatenote.addTextChangedListener(textWatcher)
 
         val bundle:Bundle?=intent.extras
         if(bundle != null){
             getNote = bundle.getSerializable("catpin")!! as Catpin
         }
         loadNote(getNote)
-        binding.updateData.setOnClickListener {
+        upDatedata.setOnClickListener {
             updateNote()
         }
     }
 
     private fun loadNote(catpin: Catpin)
     {
-        binding.updateNote.setText(catpin.data)
-        binding.updateCharacter.text="${catpin.characters}"
+        upDatenote.setText(catpin.data)
+        upCharacter.text="${catpin.characters}"
     }
 
     private fun updateNote()
     {
-        getNote.data=binding.updateNote.text.toString()
-        getNote.date=binding.updateDate.text.toString()
-        getNote.characters= binding.updateNote.text.toString().length.toLong()
-        noteViewModel.update(applicationContext,getNote)
+        getNote.data=upDatenote.text.toString()
+        getNote.date=upDatenote.text.toString()
+        getNote.characters= upDatenote.text.toString().length.toLong()
+        catpinViewModel.update(applicationContext,getNote)
         val intent= Intent(this,MainActivity::class.java)
         startActivity(intent)
     }
@@ -69,7 +74,7 @@ class TambahkanmemoActivity:AppCompatActivity() {
         @SuppressLint("SetTextI18n")
         override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
 
-            binding.updateCharacter.text= " | Character "+s?.length.toString()
+            upCharacter.text= " | Character "+s?.length.toString()
 
         }
 
@@ -77,7 +82,7 @@ class TambahkanmemoActivity:AppCompatActivity() {
 
     private fun getDate() {
         date= Calendar.getInstance().time
-        binding.updateDate.text=date.toString()
+        upDatedate.text=date.toString()
     }
 
 }

@@ -1,9 +1,8 @@
 package com.myaasiinh.catpin.data.repository
 
 import android.content.Context
-import android.provider.ContactsContract
 import androidx.lifecycle.LiveData
-import com.codingwithjks.notepad.ui.Model.Catpin
+import com.myaasiinh.catpin.data.model.Catpin
 import com.myaasiinh.catpin.data.database.CatpinDatabase
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers

@@ -11,7 +11,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Catatanpintar">
         <activity
-            android:name="com.myaasiinh.catpin.ui.main.view.MainActivity"
+            android:name="com.myaasiinh.catpin.ui.main.view.SplashscreenActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -19,10 +19,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
+        <activity android:name=".ui.main.view.MainActivity" />
         <activity android:name=".ui.main.view.TambahkanmemoActivity" />
         <activity android:name=".ui.main.view.TentangAplikasiActivity" />
 
     </application>
 
 </manifest>
+

@@ -6,8 +6,7 @@
     android:layout_height="match_parent"
     android:background="#fff"
     android:orientation="vertical"
-    tools:context=".ui.main.view.TentangAplikasiActivity"
-    >
+    tools:context=".ui.main.view.TentangAplikasiActivity">
     <RelativeLayout
         android:layout_marginTop="40dp"
         android:layout_width="match_parent"
@@ -40,7 +39,8 @@
             app:fabCustomSize="70dp"
             android:layout_gravity="end|bottom"
             android:layout_margin="20dp"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/todo" />
         <LinearLayout
             android:layout_marginTop="10dp"
             android:layout_width="match_parent"
@@ -56,7 +56,10 @@
                 android:focusable="true"
                 android:background="@null"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"/>
+                android:layout_height="match_parent"
+                android:autofillHints=""
+                android:inputType=""
+                tools:ignore="LabelFor" />
 
         </LinearLayout>
 

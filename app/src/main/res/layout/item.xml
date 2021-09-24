@@ -22,7 +22,7 @@
         <TextView
             android:id="@+id/data"
             android:layout_width="wrap_content"
-            android:text="data"
+            android:text="@string/data"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
             android:layout_height="wrap_content"/>
 
@@ -30,7 +30,7 @@
             android:id="@+id/date"
             android:layout_marginTop="15dp"
             android:layout_width="wrap_content"
-            android:text="date"
+            android:text="@string/date"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
             android:layout_height="wrap_content"/>
 

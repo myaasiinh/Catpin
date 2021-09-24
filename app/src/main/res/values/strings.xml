@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">Catpin</string>
+    <string name="search">search</string>
+    <string name="tambahkan_memo">Tambahkan Memo</string>
+    <string name="tentang_app">Tentang app</string>
+    <string name="keluar_app">Keluar app</string>
+    <string name="save">save</string>
+    <string name="todo">TODO</string>
+    <string name="data">data</string>
+    <string name="date">date</string>
+    <string name="todo">TODO</string>
+    <string name="todo">TODO</string>
+    <string name="tentang_aplikasi_catat_pintar">Tentang Aplikasi Catat Pintar</string>
+    <string name="tim_pengembang_aplikasi">Tim Pengembang Aplikasi</string>
 </resources>

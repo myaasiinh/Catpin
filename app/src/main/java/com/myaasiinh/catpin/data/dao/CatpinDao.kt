@@ -2,7 +2,7 @@ package com.myaasiinh.catpin.data.dao
 
 import androidx.lifecycle.LiveData
 import androidx.room.*
-import com.codingwithjks.notepad.ui.Model.Catpin
+import com.myaasiinh.catpin.data.model.Catpin
 
 @Dao
 interface CatpinDao {

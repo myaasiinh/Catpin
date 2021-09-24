@@ -7,7 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.codingwithjks.notepad.ui.Model.Catpin
+import com.myaasiinh.catpin.data.model.Catpin
 import com.myaasiinh.catpin.R
 import com.myaasiinh.catpin.utils.listener.Listener
 

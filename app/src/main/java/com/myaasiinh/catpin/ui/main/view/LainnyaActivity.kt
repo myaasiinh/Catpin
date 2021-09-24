@@ -1,41 +1,48 @@
 package com.myaasiinh.catpin.ui.main.view
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.codingwithjks.notepad.ui.Model.Catpin
+import androidx.core.content.ContextCompat
 import com.google.android.material.appbar.MaterialToolbar
 import com.myaasiinh.catpin.R
-import com.myaasiinh.catpin.databinding.ActivityLainnyaBinding
+import com.myaasiinh.catpin.data.model.Catpin
 import com.myaasiinh.catpin.ui.main.viewmodel.CatpinViewModel
 import java.util.*
 import kotlin.properties.Delegates
 
-class LainnyaActivity : AppCompatActivity() {
+class LainnyaActivity : AppCompatActivity(R.layout.activity_lainnya) {
 
     //@SuppressLint("RestrictedApi")
     private lateinit var  getData:String
-    private lateinit var noteViewModel: CatpinViewModel
+    private lateinit var catpinviewModel: CatpinViewModel
     private lateinit var date: Date
     private var getCharacter by Delegates.notNull<Long>()
     private lateinit var getDate:String
-    private lateinit var binding : ActivityLainnyaBinding
+    private lateinit var currentDate : TextView
+    private lateinit var character : TextView
+    private lateinit var toolbar1 : MaterialToolbar
+    private lateinit var note : EditText
 
+    @SuppressLint("UseCompatLoadingForDrawables")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityLainnyaBinding.inflate(layoutInflater)
-        setContentView(binding.root)
 
-        val toolbar1 = findViewById<MaterialToolbar>(R.id.toolbar1)
+        note = findViewById(R.id.note)
+        currentDate = findViewById(R.id.currentDate)
+        character = findViewById(R.id.characters)
+        toolbar1 = findViewById(R.id.toolbar1)
         setSupportActionBar(toolbar1)
-        noteViewModel= CatpinViewModel()
-        val upArrow=resources.getDrawable(R.drawable.arrow)
-
+        catpinviewModel= CatpinViewModel()
+        val upArrow=ContextCompat.getDrawable(applicationContext, R.drawable.arrow)
         getDate()
         supportActionBar?.apply {
             setDisplayHomeAsUpEnabled(true)
@@ -46,7 +53,7 @@ class LainnyaActivity : AppCompatActivity() {
         toolbar1.setNavigationOnClickListener {
             backToHomePage()
         }
-        binding.note.addTextChangedListener(textWatcher)
+        note.addTextChangedListener(textWatcher)
     }
 
     private val textWatcher= object : TextWatcher {
@@ -58,9 +65,10 @@ class LainnyaActivity : AppCompatActivity() {
 
         }
 
+        @SuppressLint("SetTextI18n")
         override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
 
-            binding.characters.text= " | Characters "+s?.length.toString()
+            character.text= " | Characters "+s?.length.toString()
 
         }
 
@@ -74,12 +82,12 @@ class LainnyaActivity : AppCompatActivity() {
 
     private fun getDate() {
         date=Calendar.getInstance().time
-        binding.currentDate.text=date.toString()
+        currentDate.text=date.toString()
     }
 
     private fun saveDataIntoDatabase() {
-        getData=binding.note.text.toString()
-        getDate =binding.currentDate.text.toString()
+        getData=note.text.toString()
+        getDate =currentDate.text.toString()
         getCharacter= getData.trim().length.toLong()
     }
 
@@ -97,7 +105,7 @@ class LainnyaActivity : AppCompatActivity() {
                 saveDataIntoDatabase()
                 if(getData.isNotEmpty())
                 {
-                    noteViewModel.insert(applicationContext,
+                    catpinviewModel.insert(applicationContext,
                         Catpin(getData, getDate, getCharacter)
                     )
                     backToHomePage()
@@ -109,7 +117,4 @@ class LainnyaActivity : AppCompatActivity() {
         }
         return super.onOptionsItemSelected(item)
     }
-
-
-
 }

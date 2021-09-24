@@ -4,25 +4,21 @@
 
 
     <item android:id="@+id/searchItems"
-        android:title="search"
+        android:title="@string/search"
         app:showAsAction="always"
         android:icon="@drawable/ic_baseline_search_24"
         app:actionViewClass="androidx.appcompat.widget.SearchView" />
 
     <item
         android:id="@+id/tambahkanmemo"
-        android:title="Tambahkan Memo" />
-
-    <item
-        android:id="@+id/rubahmodememo"
-        android:title="Rubah Mode memo" />
+        android:title="@string/tambahkan_memo" />
 
     <item
         android:id="@+id/tentangapp"
-        android:title="Tentang app" />
+        android:title="@string/tentang_app" />
 
     <item
         android:id="@+id/keluarapp"
-        android:title="Keluar app" />
+        android:title="@string/keluar_app" />
 
 </menu>

@@ -1,4 +1,4 @@
-package com.codingwithjks.notepad.ui.Model
+package com.myaasiinh.catpin.data.model
 
 import androidx.room.Entity
 import androidx.room.Index

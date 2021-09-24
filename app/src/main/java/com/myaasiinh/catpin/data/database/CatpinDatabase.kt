@@ -1,11 +1,10 @@
 package com.myaasiinh.catpin.data.database
 
 import android.content.Context
-import android.provider.ContactsContract
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import com.codingwithjks.notepad.ui.Model.Catpin
+import com.myaasiinh.catpin.data.model.Catpin
 import com.myaasiinh.catpin.data.dao.CatpinDao
 
 
