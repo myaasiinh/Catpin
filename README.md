@@ -5,7 +5,7 @@ this project school task for student  create project collaboration
 
 tech using this project design patern mvvm(model view view model)
 
-using kotlin coroutines, livedata, material design, room database, and ViewModel
+using kotlin coroutines, livedata, material design, room database, viewModel,and binding
 
 in this project can be writes, update, search, and delete notes
 
