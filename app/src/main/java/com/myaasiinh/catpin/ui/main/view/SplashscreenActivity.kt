@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatDelegate
 import com.myaasiinh.catpin.R
 
 class SplashscreenActivity : AppCompatActivity(R.layout.splashscreen) {
@@ -17,6 +18,8 @@ class SplashscreenActivity : AppCompatActivity(R.layout.splashscreen) {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+
 
         /*
         splahscreen = findViewById(R.id.catpin_logo_splashscreen)

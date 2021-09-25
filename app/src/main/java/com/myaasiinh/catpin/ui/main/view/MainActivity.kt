@@ -8,6 +8,7 @@ import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.appcompat.widget.SearchView
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -23,18 +24,20 @@ import com.myaasiinh.catpin.ui.main.viewmodel.CatpinViewModel
 import com.myaasiinh.catpin.utils.listener.Listener
 import kotlin.system.exitProcess
 
-class MainActivity : AppCompatActivity(), Listener {
+class MainActivity : AppCompatActivity(R.layout.activity_main),
+    Listener {
 
     private lateinit var recyclerView: RecyclerView
     private lateinit var catpinviewModel: CatpinViewModel
-    private lateinit var catpinAdapter: CatpinAdapter
+    private lateinit var  catpinAdapter: CatpinAdapter
     private lateinit var catpinList: ArrayList<Catpin>
     private lateinit var searchView: SearchView
     private lateinit var toolbar : MaterialToolbar
     
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+
 
         toolbar = findViewById(R.id.topAppBar)
         toolbar.setNavigationOnClickListener {
@@ -45,13 +48,11 @@ class MainActivity : AppCompatActivity(), Listener {
         catpinAdapter = CatpinAdapter(applicationContext, ArrayList<Catpin>(), this)
         initialiseRecyclerView()
 
-
         catpinviewModel = ViewModelProvider(this).get(CatpinViewModel::class.java)
         catpinviewModel.getCardsData(this)?.observe(this, Observer {
             catpinAdapter.setData(it as ArrayList<Catpin>)
             catpinList = it
         })
-
 
         val itemTouchHelper=ItemTouchHelper(simpleCallback)
         itemTouchHelper.attachToRecyclerView(recyclerView)
@@ -91,6 +92,7 @@ class MainActivity : AppCompatActivity(), Listener {
         })
         return true
     }
+
     private fun getItemsFromDB(data:String)
     {
         var searchText: String = "%$data%"
@@ -102,12 +104,14 @@ class MainActivity : AppCompatActivity(), Listener {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.tambahkanmemo -> {
+                //handle move create new memo
                 val intent = Intent(this, LainnyaActivity::class.java)
                 startActivity(intent)
 
             }
 
             R.id.tentangapp -> {
+                //handle move detail tentang app layout
                 val intent = Intent(this, TentangAplikasiActivity::class.java)
                 startActivity(intent)
 
