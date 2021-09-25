@@ -6,9 +6,9 @@ import android.os.Handler
 import android.os.Looper
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
-import com.myaasiinh.catpin.R
+import com.myaasiinh.catpin.databinding.SplashscreenBinding
 
-class SplashscreenActivity : AppCompatActivity(R.layout.splashscreen) {
+class SplashscreenActivity : AppCompatActivity() {
 
     /*
 
@@ -16,8 +16,13 @@ class SplashscreenActivity : AppCompatActivity(R.layout.splashscreen) {
 
      */
 
+    private lateinit var binding : SplashscreenBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        binding = SplashscreenBinding.inflate(layoutInflater)
+        val view = binding.root
+        setContentView(view)
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
 
 
