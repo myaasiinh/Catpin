@@ -22,7 +22,6 @@ import com.myaasiinh.catpin.data.model.Catpin
 import com.myaasiinh.catpin.ui.main.adapter.CatpinAdapter
 import com.myaasiinh.catpin.ui.main.viewmodel.CatpinViewModel
 import com.myaasiinh.catpin.utils.listener.Listener
-import kotlin.system.exitProcess
 
 class MainActivity : AppCompatActivity(R.layout.activity_main),
     Listener {
@@ -117,8 +116,12 @@ class MainActivity : AppCompatActivity(R.layout.activity_main),
 
             }
             R.id.keluarapp -> {
-                //handle press exit
-                exitProcess(0)
+                val intent = Intent(Intent.ACTION_MAIN)
+                intent.addCategory(Intent.CATEGORY_HOME)
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK)
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+                startActivity(intent)
+                System.exit(1)
             }
 
         }
