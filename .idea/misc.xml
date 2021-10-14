@@ -4,14 +4,20 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/user/AndroidStudioProjects/Catatanpintar/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/Catpin-master/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2203125" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/Catpin-master/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2203125" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/Catpin-master/app/src/main/res/drawable/ic_logo.xml" value="0.2203125" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/Catpin-master/app/src/main/res/drawable/ic_logosplashcatpin.xml" value="0.2203125" />
         <entry key="..\:/Users/user/AndroidStudioProjects/Catpin-master/app/src/main/res/drawable/update.xml" value="0.1" />
         <entry key="..\:/Users/user/AndroidStudioProjects/Catpin-master/app/src/main/res/layout/activity_detail.xml" value="0.1" />
         <entry key="..\:/Users/user/AndroidStudioProjects/Catpin-master/app/src/main/res/layout/activity_lainnya.xml" value="0.14" />
         <entry key="..\:/Users/user/AndroidStudioProjects/Catpin-master/app/src/main/res/layout/activity_main.xml" value="0.1" />
-        <entry key="..\:/Users/user/AndroidStudioProjects/Catpin-master/app/src/main/res/layout/splashscreen.xml" value="0.1" />
-        <entry key="..\:/Users/user/AndroidStudioProjects/Catpin-master/app/src/main/res/layout/tentang_aplikasi.xml" value="0.16" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/Catpin-master/app/src/main/res/layout/splashscreen.xml" value="0.25" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/Catpin-master/app/src/main/res/layout/tentang_aplikasi.xml" value="0.25" />
         <entry key="..\:/Users/user/AndroidStudioProjects/Catpin-master/app/src/main/res/menu/detailmenu.xml" value="0.14722222222222223" />
         <entry key="..\:/Users/user/AndroidStudioProjects/Catpin-master/app/src/main/res/menu/settingmenu.xml" value="0.15" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/Catpin-master/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.2203125" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/Catpin-master/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.2203125" />
         <entry key="..\:/Users/user/AndroidStudioProjects/Catpin/app/src/main/res/drawable/arrow.xml" value="0.19948717948717948" />
         <entry key="..\:/Users/user/AndroidStudioProjects/Catpin/app/src/main/res/drawable/check.xml" value="0.1388888888888889" />
         <entry key="..\:/Users/user/AndroidStudioProjects/Catpin/app/src/main/res/drawable/ic_baseline_more_horiz_24.xml" value="0.20260416666666667" />
