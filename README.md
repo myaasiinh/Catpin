@@ -3,11 +3,29 @@ school task collaboration project simple android app note
 
 this project school task for student  create project collaboration 
 
-tech using this project design patern mvvm(model view view model)
+tech using this project design patern mvvm(model view view model) using : 
+ 
+1. kotlin coroutines
 
-using kotlin coroutines, livedata, material design, room database, viewModel,and binding
+2. livedata
 
-in this project can be writes, update, search, and delete notes
+3. material design
+
+4. room database
+
+5. viewModel 
+
+6. binding
+
+Feature in this apps
+
+1. writes new notes
+
+2. update notes history
+
+3. search for shorted key
+
+4. delete notes history
 
 this is a demo apps
 
